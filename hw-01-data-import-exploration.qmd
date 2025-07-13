@@ -1,12 +1,16 @@
 ---
 title: "Final Practice"
 subtitle: "Section 01"
+author: "Luke Seifert"
 format:
   html:
     embed-resources: true
+    toc: true
+    toc_depth: 2
+    toc_float: true
 execute: 
   echo: true
-  warning: false
+  warning: FALSE
 editor: visual
 editor_options: 
   chunk_output_type: console
