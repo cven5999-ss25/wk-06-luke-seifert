@@ -44,7 +44,9 @@ generation_complete <- generation |>
 
 3.  Why does the resulting data object have data for 326 countries and not for the identified number of countries with population data in Point 1?
 
-4.  Store the result as a new object in your environment with the name `generation_joined`.
+`The resulting data object has 326 observations because left_join keeps all rows from the left table (generation_complete), even if there's no matching data in the right table (population).`
+
+1.  Store the result as a new object in your environment with the name `generation_joined`.
 
 ```{r}
 # Answer to question 1
@@ -88,6 +90,7 @@ generation_capita <- generation_joined |>
 generation_capita |>
   slice_max(msw_generation_capita_kg_year, n = 5) |>
   knitr::kable()
+
 ```
 
 # Task 2.5
