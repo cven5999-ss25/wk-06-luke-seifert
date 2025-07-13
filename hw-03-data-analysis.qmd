@@ -30,9 +30,14 @@ treatment <- read_csv(here("data/what_a_waste/what-a-waste-city-level-data-treat
 How many cities are covered in this dataset?
 
 ```{r}
+# My own code, dont think this was taught during the course tho
+n_distinct(treatment$city)
 
-
-
+# Taught during class
+treatment |> 
+  group_by(city) |> 
+  summarise(count = n()) |> 
+  summarise(count = n()) 
 ```
 
 # Task 3.2
@@ -44,6 +49,10 @@ In how many cities is all waste (100%) openly dumped?
 ```{r}
 
 
+treatment |> 
+  filter(waste_treatment == "open_dump" & percent == 100) |>  
+  summarise(count = n()) 
+
 ```
 
 # Task 3.3
@@ -54,7 +63,10 @@ How many cities in which no waste (0%) is recycled fall into each income categor
 
 ```{r}
 
-
+treatment |> 
+  filter(waste_treatment == "recycling" & percent == 0) |>
+  group_by(income_id) |> 
+  summarise(count = n()) 
 
 ```
 
@@ -66,7 +78,13 @@ What is the mean, median, and standard deviation of treatment percentages for ea
 
 ```{r}
 
-
+treatment |> 
+  group_by(waste_treatment, income_id) |>
+  summarise( 
+    mean = mean(percent),
+    median = median(percent), 
+    sd = sd(percent)
+  ) 
 
 ```
 
