@@ -31,6 +31,12 @@ Reproduce the table that you see as an image below when you render the report an
 
 ```{r}
 
+library(reactable)
+
+treatment_mean |> 
+  pivot_wider(names_from = income_id, 
+              values_from = mean) |> 
+  knitr::kable(digits = 1)
 
 ```
 
@@ -50,6 +56,23 @@ Reproduce the plot that you see as an image below when you render the report and
 
 ```{r}
 
+income_fct_level <- c("LIC", "LMC", "UMC", "HIC") 
+
+treatment_mean_fct <- treatment_mean |> 
+  mutate(income_id = factor(income_id, levels = income_fct_level))  
+
+ggplot(data = treatment_mean_fct,
+       mapping = aes(x = waste_treatment, y = mean, fill = waste_treatment)) + 
+  geom_col() + 
+  coord_flip() +
+  labs(title = "Waste Treatment", 
+       subtitle = "Mean percentages for countries by income regions", 
+       x = "mean (percent)", 
+       y = NULL) + 
+  scale_fill_brewer(type = "qual", palette = "Paired") +
+  scale_y_continuous(breaks = seq(0, 40, 5)) +
+  facet_wrap(~income_id) +
+  theme(legend.position = "none") 
 
 
 ```
