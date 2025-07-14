@@ -13,15 +13,17 @@ Learning reflections are part of your weekly homework and have a weight of 20% o
 
 # Lecture
 
-<!--# Add your reflections on the lecture of this week here -->
+This lecture was a nice closing piece to show us how to publish or present our findings. I will be leading a workshop later this week on my data, so I was hoping we would go over how to properly render it before then.
 
 # Homework Assignment
 
-<!--# Add your reflections on the homework programming assignment here -->
+Each of the homeworks this week were a good overview of our past lectures and homeworks. I am thankful we had these as a homework with provided solutions to check our answers, rather than an exam. I think using our new knowledge on a capstone project is a much better way to represent our understandings as well.
 
 # Readings
 
-<!--# Add your reflections on the required readings here -->
+R for Data Science - Section 13 - Relational data:
+
+“The variables used to connect each pair of tables are called keys. A key is a variable (or set of variables) that uniquely identifies an observation.” – can be primary or foreign. Inner joins vs outer joins, lecture says almost always use left_join. This chapter was a bit hard to understand with just the reading but the figures along with it were very helpful.
 
 # Submit learning reflections
 
